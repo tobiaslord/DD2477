@@ -13,14 +13,53 @@
 // wish.
 
 
-// Twenty-four seven
-\d+/\d+
-
 
 // ADD YOUR PATTERNS HERE
+
+//words surrounded by citations
+(?<='|")([a-z]+)(?="|')
+
+//Email
+([^\s"'\\!:\/])+@[^\s"'\\!:\/]+
+
+//URIs
+(https?)[^\s"']+
+
+//IP
+(\d{1,4}\.){3}\d{1,4}
+
+//Dollar amounts
+\$[0-9]+
+
+//Large numbers
+([0-9]{1,3})(,([0-9]{3,}))+
+
+
+//'ll, 'd, 't etc.
+([a-zA-Z]+)?'[a-z]{1,2}
+
+//e.g.
+[a-z]\.[a-z]\.
+
+//Phone
+([0-9]+-)+[0-9x]+
+\+[0-9]{1,}
+
+//Files
+[a-zA-Z0-9_]+\.[a-z]+
+
+//Clock
+([0-9]{1,2}:)+[0-9]+
+
+//Version number like
+([0-9]\.)+[0-9]+
+
+//Words with hypen ("uri-intended")
+[a-zA-Z]+-[a-zA-Z]+
+
+// Twenty-four seven
+\d+/\d+
 
 // The patterns will be tried from top to bottom, so it is a
 // good idea to put more specific patterns above more general
 // patterns.
-
-
