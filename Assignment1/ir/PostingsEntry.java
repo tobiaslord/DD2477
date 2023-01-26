@@ -1,9 +1,9 @@
-/*  
+/*
  *   This file is part of the computer assignment for the
  *   Information Retrieval course at KTH.
- * 
+ *
  *   Johan Boye, 2017
- */  
+ */
 
 package ir;
 
@@ -22,7 +22,7 @@ public class PostingsEntry implements Comparable<PostingsEntry>, Serializable {
      *  PostingsEntries are compared by their score (only relevant
      *  in ranked retrieval).
      *
-     *  The comparison is defined so that entries will be put in 
+     *  The comparison is defined so that entries will be put in
      *  descending order.
      */
     public int compareTo( PostingsEntry other ) {
@@ -34,4 +34,3 @@ public class PostingsEntry implements Comparable<PostingsEntry>, Serializable {
     // YOUR CODE HERE
     //
 }
-

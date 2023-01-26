@@ -185,7 +185,7 @@ public class SearchGUI extends JFrame {
                     displayResults( MAX_RESULTS, elapsedTime/1000.0 );
                 } else {
                     displayInfoText( "Found 0 matching document(s)" );
-                    
+
                     if (engine.speller != null) {
                         SpellingOptionsDialog dialog = new SpellingOptionsDialog(50);
                         startTime = System.currentTimeMillis();

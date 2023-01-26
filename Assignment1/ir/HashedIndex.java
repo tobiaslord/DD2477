@@ -1,9 +1,9 @@
-/*  
+/*
  *   This file is part of the computer assignment for the
  *   Information Retrieval course at KTH.
- * 
+ *
  *   Johan Boye, 2017
- */  
+ */
 
 
 package ir;
@@ -29,6 +29,18 @@ public class HashedIndex implements Index {
         //
         // YOUR CODE HERE
         //
+
+        String key = hashToken( token );
+        PostingsEntry entry = new PostingsEntry();
+        entry.docID = docID;
+
+        PostingsList postings = index.get( key );
+        if (postings == null) {
+            postings = new PostingsList();
+            index.put( key, postings );
+        }
+
+        postings.add( entry );
     }
 
 
@@ -40,7 +52,13 @@ public class HashedIndex implements Index {
         //
         // REPLACE THE STATEMENT BELOW WITH YOUR CODE
         //
-        return null;
+        String key = hashToken(token);
+
+        return index.get(key);
+    }
+
+    private String hashToken( String token ) {
+        return token;
     }
 
 

@@ -1,9 +1,9 @@
-/*  
+/*
  *   This file is part of the computer assignment for the
  *   Information Retrieval course at KTH.
- * 
+ *
  *   Johan Boye, 2017
- */  
+ */
 
 package ir;
 
@@ -17,7 +17,7 @@ public class Searcher {
 
     /** The k-gram index to be searched by this Searcher */
     KGramIndex kgIndex;
-    
+
     /** Constructor */
     public Searcher( Index index, KGramIndex kgIndex ) {
         this.index = index;
@@ -28,10 +28,14 @@ public class Searcher {
      *  Searches the index for postings matching the query.
      *  @return A postings list representing the result of the query.
      */
-    public PostingsList search( Query query, QueryType queryType, RankingType rankingType, NormalizationType normType ) { 
+    public PostingsList search( Query query, QueryType queryType, RankingType rankingType, NormalizationType normType ) {
         //
         //  REPLACE THE STATEMENT BELOW WITH YOUR CODE
         //
+        if (query.queryterm.size() > 0) {
+            String token = query.queryterm.get(0 ).term;
+            return this.index.getPostings( token );
+        }
         return null;
     }
 }
